@@ -6,18 +6,19 @@
 
 <input type="text" name="pet[name]" id="pet_name" value="<%=@pet.name%>">
 
-<label>Owner: </label>
+<p>Select an existing owner: </p>
 <br>
-
-
-
-<% @owners.each do |owner| %>
-   <input type="checkbox" name="owner[name]" value="<%=owner.id%>" id="<%=owner.id%>"
-      <%="checked" if owner == @pet.owner %>
-   ><%= owner.name %>
-<% end %>
+<ul>
+   <% @owners.each do |owner| %>
+      <input type="radio" name="pet[owner_id]" value="<%=owner.id%>" id="<%=owner.id%>"
+         <%="checked" if owner == @pet.owner %>
+      ><%= owner.name %>
+   <% end %>
+</ul>
 
 <br>
+<p>Or, create a new owner:</p>
+<input type="text" name="owner[name]" id="owner_name">
 
 <input type="submit" id="submit" value="Update Pet">
 </form>

@@ -35,13 +35,11 @@ class PetsController < ApplicationController
   end
 
   patch '/pets/:id' do 
-
     params.delete("_method")
     @pet = Pet.find(params[:id])
-    @pet.name = params[:pet][:name]
-
-    unless params[:owner].empty?
-      @pet.owner_id = params[:owner][:name]
+    @pet.update(params[:pet])
+    unless params[:owner][:name].empty?
+      @pet.owner = Owner.new(name: params[:owner][:name])
     end
     @pet.save
     redirect to "pets/#{@pet.id}"

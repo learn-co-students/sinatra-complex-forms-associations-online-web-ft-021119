@@ -5,14 +5,14 @@
     <title></title>
   </head>
   <body>
-
+    <ul>
     <%@owners.each do |owner|%>
-      <h1><ul><%= owner.name %></ul></h1>
+      <a href="/owners/<%=owner.id%>"><%= owner.name %></a>
       <br>
       <li><%= owner.pets %></li>
       <br>
-      <br>
     <%end%>
+    </ul>
 
 
   </body>

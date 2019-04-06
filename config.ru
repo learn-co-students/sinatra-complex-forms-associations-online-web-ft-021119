@@ -16,5 +16,4 @@ end
 require_relative 'app/controllers/owners_controller'
 require_relative 'app/controllers/pets_controller'
 
-use OwnersController
-run PetsController
+run ApplicationController

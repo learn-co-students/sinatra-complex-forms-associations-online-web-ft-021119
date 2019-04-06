@@ -7,7 +7,7 @@
   <body>
     <ul>
     <%@owners.each do |owner|%>
-      <a href="/owners/<%=owner.id%>"><%= owner.name %></a>
+      <a href="/owners/<%= owner.id %>"><%= owner.name %></a>
       <br>
       <li><%= owner.pets %></li>
       <br>

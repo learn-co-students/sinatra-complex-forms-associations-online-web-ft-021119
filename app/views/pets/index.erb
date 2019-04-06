@@ -7,6 +7,7 @@
   <body>
 
     <%@pets.each do |pet|%>
+    <a href="/pets/pet<%="#{id}"%>"
       <h1><ul><%= pet.name %></ul></h1>
       <br>
       <li><%= pet.owner %></li>

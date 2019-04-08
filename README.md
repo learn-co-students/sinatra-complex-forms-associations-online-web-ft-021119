@@ -1,12 +1,12 @@
-# Sinatra and Active Record: Associations and Complex Forms
+<!-- # Sinatra and Active Record: Associations and Complex Forms
 
 ## Objectives
 
 - Build forms that allow a user to create and edit a given resource and its
   associated resources.
-- Build controller actions that handle the requests sent by such forms.
+- Build controller actions that handle the requests sent by such forms. -->
 
-## Introduction
+<!-- ## Introduction
 
 As the relationships we build between our models grow and become more complex,
 we need to build ways for our users to interact with those models in all of
@@ -19,9 +19,9 @@ associations.
 
 In order to achieve this, we'll have to build forms that allow for a user to
 create and edit not just the given object but any and all objects that are
-associated with it.
+associated with it. -->
 
-## Overview
+<!-- ## Overview
 
 **This is a walk-through with some extra challenges for you to complete on your
 own. There are tests, so be sure to run the tests to make sure you're following
@@ -29,9 +29,9 @@ along correctly. To follow along, use `shotgun` to start your app and visit
 URLs/fill out forms as instructed.** In this walk-through, we're dealing with a
 pet domain model. We have an `Owner` model and a `Pet` model. An owner has many
 pets, and a pet belongs to an owner. We've already built the migrations, models,
-and some controller actions and views. Fork and clone this lab to follow along.
+and some controller actions and views. Fork and clone this lab to follow along. -->
 
-Because an owner can have many pets, we want to be able to choose which of the
+<!-- Because an owner can have many pets, we want to be able to choose which of the
 existing pets in our database to associate to a new owner _when the owner is
 being created_. We also want to be able to create a new pet _and associate it
 with the owner being created_. So, our form for a new owner must contain a way
@@ -42,9 +42,9 @@ and/or create a new pet to associate with the owner.
 
 Here, we'll be taking a look together at the code that will implement this
 functionality. Then, you'll build out the same feature for creating/editing new
-pets.
+pets. -->
 
-## Instructions
+<!-- ## Instructions
 
 ### Before You Begin
 
@@ -59,9 +59,9 @@ this exercise).
 
 **Make sure you run `rake db:migrate` and `rake db:seed` before you move on**.
 This will migrate our database and seed it with one owner and two pets to get us
-started.
+started. -->
 
-#### A Note on Seed Files
+<!-- #### A Note on Seed Files
 
 The phrase 'seeding the database' refers to the practice of filling up your
 database with some dummy data. As we develop our apps, it is essential that we
@@ -98,9 +98,9 @@ fairly simply here, but you could imagine writing code in your seed file that
 sends a request to an external API and instantiates and saves instances of a
 class using the response from the API. You could also write code that opens a
 directory of files and uses information about each file to create and save
-instances of a class. The list goes on.
+instances of a class. The list goes on. -->
 
-### Creating a New Owner and Their Associated Pets
+<!-- ### Creating a New Owner and Their Associated Pets
 
 Open up `app/views/owners/new.erb` and you should see the following code:
 
@@ -125,7 +125,7 @@ should include a list of checkboxes, one for each existing pet, for our user to
 select from at will.
 
 How can we dynamically, or programmatically, generate a list of checkboxes for
-all of the pets that are currently in our database?
+all of the pets that are currently in our database? -->
 
 #### Dynamically Generating Checkboxes
 
@@ -497,4 +497,3 @@ is created it would override any existing owner that is selected.
 Make sure you run the tests to check your work.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/sinatra-complex-forms-associations'>Sinatra Complex Forms Associations</a> on Learn.co and start learning to code for free.</p>
-

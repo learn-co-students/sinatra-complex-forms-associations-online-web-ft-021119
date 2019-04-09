@@ -9,5 +9,12 @@
 
   <br>
 
+  <%@pets.each do |pet|%>
+    <input type="checkbox" name="owner[pets_ids][]" value="<%pet.id%>"> id="<%pet.id%>"/>
+    <%=pet.name%></input>
+  <%end%>
+
+  <br>
+
   <input type="submit" value="Create Owner">
 </form>

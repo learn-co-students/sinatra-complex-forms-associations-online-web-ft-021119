@@ -1,1 +1,12 @@
-index.erb
+<h1>Owner's and their pets:</h1
+
+<%@owners.each do |owner|%>
+  <h2><%=owner.name%></h2>
+  <%if owner.pets.size > 0%>
+    <%str = ""%>
+    <%owner.pets.each do |pet|%>
+      <%str + pet.name%>
+    <%end%>
+    <p>Pets: <%="#{str}"%></p>
+  <%end%>
+<%end%><br>

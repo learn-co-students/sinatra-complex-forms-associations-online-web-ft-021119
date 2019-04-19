@@ -1,1 +1,11 @@
-show.erb
+<h1><%= @pet.name %></h1>
+
+<% if @pet.owner %>
+<h4>Owner: <%= @pet.owner.name %></h4>
+<% else %>
+<h4>This pet has no owner.</h4>
+<% end %>
+
+<form action="/pets/<%=@pet.id%>/edit" method="post">
+  <input type="submit" id="submit" value="Edit">
+</form>
